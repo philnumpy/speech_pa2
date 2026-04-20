@@ -11,33 +11,17 @@
 
 ```
 .
-├── pipeline.py                   # Single executable end-to-end script
-├── Speech_PA2_Complete.ipynb     # Full notebook with outputs
-├── environment.yml               # Conda environment
-├── requirements.txt              # pip fallback
-├── README.md                     # This file
-├── report/
-│   └── report.tex                # IEEE two-column LaTeX report
-├── audio/
-│   ├── original_segment.wav      # Source lecture (10 min, 22050 Hz)
-│   ├── denoised_segment.wav      # After spectral subtraction
-│   └── output_LRL_cloned.wav     # Final Maithili cloned output (24000 Hz)
-├── student_voice_ref.wav         # 60-second student voice reference
-├── models/
-│   ├── lid_weights.pt            # Trained LID model weights
-│   ├── speaker_embedding.npy     # 512-dim x-vector
-│   ├── warped_f0.npy             # DTW-warped F0 contour
-│   └── warped_energy.npy         # DTW-warped energy contour
-└── outputs/
-    ├── transcript.txt            # Whisper Turbo transcript
-    ├── segments.json             # Word-level timestamps
-    ├── ipa_transcript.txt        # Unified IPA representation
-    ├── maithili_translation.txt  # NLLB-200 Maithili translation
-    ├── prosody_comparison.png    # F0/energy comparison plot
-    ├── lid_confusion_matrix.png  # LID frame-level confusion matrix
-    ├── roc_antispoofing.png      # Anti-spoofing ROC curve
-    ├── fgsm_epsilon_analysis.png # FGSM adversarial analysis
-    └── ablation_mcd.png          # Prosody warping ablation
+pipeline.py                   # Single executable end-to-end script
+Speech_PA2.ipynb     # Full notebook with outputs
+environment.yml               # Conda environment
+requirements.txt              # pip fallback
+README.md                     # This file
+report
+student_voice_ref.wav
+original_segment.wav
+output_LRL_cloned.wav
+lid_weights.pt            # Trained LID model weights
+
 ```
 
 ---
@@ -78,7 +62,7 @@ myrecording.wav             # Your 60-second voice recording (any SR)
 
 Or pre-resample to 22050 Hz and place them as:
 ```
-audio/original_segment.wav
+audio/original_segment (3).wav
 student_voice_ref.wav
 ```
 
@@ -86,7 +70,7 @@ student_voice_ref.wav
 
 ```bash
 python pipeline.py \
-    --segment audio/original_segment.wav \
+    --segment audio/original_segment(3).wav \
     --voice   student_voice_ref.wav \
     --output  audio/output_LRL_cloned.wav
 ```
