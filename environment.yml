@@ -1,0 +1,64 @@
+name: speech_pa2
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python
+  - python=3.12
+
+  # PyTorch (CUDA 12.1)
+  - pytorch::pytorch=2.3.0
+  - pytorch::torchaudio=2.3.0
+  - pytorch::torchvision=0.18.0
+  - pytorch::pytorch-cuda=12.1
+
+  # Core scientific
+  - numpy>=1.25
+  - scipy>=1.11
+  - scikit-learn>=1.4
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - pandas>=2.1
+
+  # Audio
+  - librosa>=0.10
+  - soundfile>=0.12
+
+  # pip-only packages
+  - pip
+  - pip:
+      # ASR
+      - openai-whisper>=20231117
+
+      # Translation
+      - transformers>=4.40.0
+      - sentencepiece>=0.2.0
+      - sacremoses>=0.1.1
+
+      # TTS (Coqui XTTS v2)
+      - TTS>=0.22.0
+
+      # Speaker embeddings
+      - speechbrain>=1.0.0
+
+      # G2P / IPA
+      - phonemizer>=3.3.0
+
+      # DTW
+      - fastdtw>=0.3.4
+
+      # Evaluation
+      - jiwer>=3.0.3
+
+      # Utilities
+      - pydub>=0.25.1
+      - tqdm>=4.66
+      - huggingface-hub>=0.23.0
+      - datasets>=2.19.0
+      - accelerate>=0.30.0
+
+variables:
+  COQUI_TOS_AGREED: "1"
