@@ -31,7 +31,7 @@ lid_weights.pt            # Trained LID model weights
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/[YourUsername]/[RepoName].git
+git clone https://github.com/philnumpy/speech_pa2.git
 cd [RepoName]
 ```
 
