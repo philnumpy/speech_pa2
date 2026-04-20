@@ -18,8 +18,8 @@ requirements.txt              # pip fallback
 README.md                     # This file
 report
 student_voice_ref.wav
-original_segment.wav
-output_LRL_cloned.wav
+original_segment.wav(create a dir called audio when running and place it there as it is already resampled)
+output_LRL_cloned.wav(will be created in audio directory when you execute the code this is my cloned voice generated)
 lid_weights.pt            # Trained LID model weights
 
 ```
@@ -70,7 +70,7 @@ student_voice_ref.wav
 
 ```bash
 python pipeline.py \
-    --segment audio/original_segment(3).wav \
+    --segment audio/original_segment.wav \
     --voice   student_voice_ref.wav \
     --output  audio/output_LRL_cloned.wav
 ```
